@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Burger da Gi - Cardápio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Best Burger da Gi</h1>
+    </header>
+
+    <section class="menu">
+        <div class="menu-item">
+            <h2>BURGER SALADA</h2>
+            <p>Pão, ovo, mussarela, presunto, alface, tomate, cebola, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('BURGER SALADA')">-</button>
+                <span id="burger-salada-count">0</span>
+                <button onclick="addItem('BURGER SALADA', 6)">+</button>
+            </div>
+            <p>Preço: R$6,00</p>
+        </div>
+
+        <div class="menu-item">
+            <h2>BURGER KIDS</h2>
+            <p>Pão, hambúrguer, mussarela, presunto, ovo, salada opcional, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('BURGER KIDS')">-</button>
+                <span id="burger-kids-count">0</span>
+                <button onclick="addItem('BURGER KIDS', 7)">+</button>
+            </div>
+            <p>Preço: R$7,00</p>
+        </div>
+        <div class="menu-item">
+            <h2>X-FRANGO</h2>
+            <p>Pão, hambúrguer, frango, mussarela, presunto, ovo, alface, tomate, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('X-FRANGO')">-</button>
+                <span id="x-frango-count">0</span>
+                <button onclick="addItem('X-FRANGO', 9)">+</button>
+            </div>
+            <p>Preço: R$9,00</p>
+        </div>
+        <div class="menu-item">
+            <h2>X-CALABRESA</h2>
+            <p>Pão, hambúrguer, calabresa, mussarela, presunto, ovo, alface, tomate, cebola, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('X-CALABRESA')">-</button>
+                <span id="x-calabresa-count">0</span>
+                <button onclick="addItem('X-CALABRESA', 9)">+</button>
+            </div>
+            <p>Preço: R$9,00</p>
+        </div>
+        <div class="menu-item">
+            <h2>X-BACON</h2>
+            <p>Pão, hambúrguer, bacon, mussarela, presunto, ovo, alface, tomate, cebola, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('X-BACON')">-</button>
+                <span id="x-bacon-count">0</span>
+                <button onclick="addItem('X-BACON', 10)">+</button>
+            </div>
+            <p>Preço: R$10,00</p>
+        </div>
+        <div class="menu-item">
+            <h2>X- FRAN BACON</h2>
+            <p>Pão, hambúrguer, frango, bacon, mussarela, presunto, ovo, alface, tomate, cebola, molho da casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('X-FRAN BACON')">-</button>
+                <span id="x-fran-bacon-count">0</span>
+                <button onclick="addItem('X-FRAN BACON', 10)">+</button>
+            </div>
+            <p>Preço: R$9,00</p>
+        </div>
+        <div class="menu-item">
+            <h2>X-TUDO</h2>
+            <p>Pão, 2 hambúrguer, frango, bacon, calabresa, mussarela, presunto, ovo, alface, tomate, cebola, molho da
+                casa</p>
+            <div class="item-controls">
+                <button onclick="removeItem('X-TUDO')">-</button>
+                <span id="x-tudo-count">0</span>
+                <button onclick="addItem('X-TUDO', 15)">+</button>
+            </div>
+            <p>Preço: R$15,00</p>
+        </div>
+        <h1>BEBIDAS</h1>
+        <div class="menu-item">
+            <h2>Guaraná 1L</h2>
+            <p>Preço: R$6,00</p>
+            <div class="item-controls">
+                <button onclick="removeItem('Guaraná 1L')">-</button>
+                <span id="guaraná-1l-count">0</span>
+                <button onclick="addItem('Guaraná 1L', 6)">+</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <h2>Pepsi 1L</h2>
+            <p>Preço: R$6,00</p>
+            <div class="item-controls">
+                <button onclick="removeItem('Pepsi 1L')">-</button>
+                <span id="pepsi-1l-count">0</span>
+                <button onclick="addItem('Pepsi 1L', 6)">+</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="cart">
+        <h2>Seu Pedido</h2>
+        <ul id="cart-items"></ul>
+
+        <label for="name">Nome:</label>
+        <input type="text" id="name">
+
+        <label for="address">Endereço:</label>
+        <input type="text" id="address">
+
+        <label for="payment">Forma de Pagamento:</label>
+        <select id="payment" onchange="checkPayment()">
+            <option value="cartao">Cartão</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="pix">Pix</option>
+        </select>
+
+        <div id="troco" class="hidden">
+            <label for="troco-para">Troco para:</label>
+            <input type="number" id="troco-para">
+        </div>
+
+        <label for="observations">Observações:</label>
+        <textarea id="observations"></textarea>
+
+        <button onclick="finalizeOrder()">Finalizar Pedido</button>
+    </section>
+
+    <button id="pedidos-btn" onclick="goToCart()">Pedidos (<span id="pedidos-count">0</span>)</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

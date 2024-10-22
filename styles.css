@@ -1,0 +1,173 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.menu {
+    padding: 20px 10px;
+    margin-top: 60px; /* Espaço para o cabeçalho fixo */
+}
+
+.menu-item {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(238, 168, 6, 1);
+    border-bottom: 5px solid #f90;
+    padding-bottom: 20px;
+}
+
+/* Estilo dos nomes dos itens do cardápio */
+.menu-item h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f90;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #f90;
+    padding-bottom: 5px;
+}
+
+/* Botões de adicionar e remover */
+.menu-item button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #f90;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #ff8c00;
+}
+
+.menu-item span {
+    margin: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#cart {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    margin-bottom: 15px;
+    color: #f90;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#cart input,
+#cart select,
+#cart textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#troco {
+    margin-bottom: 10px;
+}
+
+#cart button {
+    padding: 10px 20px;
+    background-color: #f90;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#cart button:hover {
+    background-color: #ff8c00;
+}
+
+#pedidos-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#pedidos-btn:hover {
+    background-color: #f90;
+}
+
+#pedidos-count {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
